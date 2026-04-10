@@ -1,0 +1,5 @@
+print("hello world")
+print("i am yashita")
+print("i study in 8th class ")
+print("and i live in hyderabad")
+print("and i like playing basketball")
