@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Async / Await App</h2>
+
+<button onclick="addNumbers()">Add Numbers</button>
+
+<h1 id="result"></h1>
+
+<script>
+
+// async function that simulates delay
+function getSum(a, b) {
+    return new Promise(function(resolve) {
+        setTimeout(function() {
+            resolve(a + b);
+        }, 2000); // 2 second delay
+    });
+}
+
+// using async/await
+async function addNumbers() {
+    document.getElementById("result").innerHTML = "Calculating... ";
+
+    let response = await getSum(5, 20); // waits for result
+
+    display(response);
+}
+
+function display(some) {
+    document.getElementById("result").innerHTML = some;
+}
+
+</script>
+
+</body>
+</html>
