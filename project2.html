@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+</head>
+
+<body>
+
+<center>
+    <h2>Login Form</h2>
+
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br><br>
+        Age: <input type="number" id="age"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="message"></p>
+</center>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var msg = document.getElementById("message");
+
+    if (name == "") {
+        msg.style.color = "red";
+        msg.innerHTML = "Name is required";
+        return false;
+    }
+
+    if (age == "" || age < 18) {
+        msg.style.color = "red";
+        msg.innerHTML = "You must be 18 or older to login";
+        return false;
+    }
+
+    msg.style.color = "green";
+    msg.innerHTML = "Login successful ✅";
+    return false; // prevents page reload (for demo)
+}
+</script>
+
+</body>
+
+</html>
